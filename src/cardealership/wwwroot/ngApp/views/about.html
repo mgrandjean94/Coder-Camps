@@ -1,0 +1,10 @@
+<h2>Search Available Models</h2>
+<ul ng-repeat="car in controller.cars|filter:{shortDescription:search}" style="list-style-type: none">
+    <li>
+        {{car.shortDescription}}
+    </li>
+</ul>
+
+<br />
+
+<input ng-model="search" ng-model-options="{debounce:1000}"/>

@@ -1,0 +1,32 @@
+
+<h2>The Car Dealership</h2>
+<br />
+<h3>Search by Make</h3>
+    
+<ul ng-repeat="make in controller.makes|filter:{name:search}"style="list-style-type: none">
+   <li>
+     {{make.name}}
+   </li>
+</ul>
+
+<br />
+
+<input ng-model="search" 
+       ng-model-options="{debounce:1000}"/>
+
+<br />
+<br />
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Shop By Makes!
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li ng-repeat="make in controller.makes"><a href="/dialog/{{make.id}}">{{make.name}}</a></li>
+        
+       
+    </ul>
+</div>
+
+   
